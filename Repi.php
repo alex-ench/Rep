@@ -16,11 +16,6 @@ foreach ($result as $index => $val)
     echo("$index - $val");
 }
 
-$fruits = $text;
-$ratingFruits= count($fruits);
-asort($ratingFruits);
-print_r($ratingFruits);
-
-//$frequency = array_count_values($text);
+//$frequency = count($text);
 //arsort($frequency);
 //echo $frequency;
