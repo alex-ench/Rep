@@ -28,10 +28,3 @@ function countAndSort($string)
     }, $words, $counts);
 }
 print_r(countAndSort($text1));
-
-
-
-
-//$frequency = count($text);
-//arsort($frequency);
-//echo $frequency;
