@@ -15,12 +15,12 @@
 </form>
 
 <?php
-if(isset($_POST['submiter']))// если отправили форму...то
+if(isset($_POST['submiter']))
 {
     touch('text1.txt');
-    $input = $_POST['input'];// получаем значение текстового поля и..
-    $f = fopen('text1.txt', 'w');// открываем файл для записи в конец =)
-    fputs($f, $input);//  записываем текстовое значение поля в файл
+    $input = $_POST['input'];
+    $f = fopen('text1.txt', 'w');
+    fputs($f, $input);
 
     $text = file_get_contents('text1.txt');
     echo $text. PHP_EOL;
@@ -41,6 +41,6 @@ if(isset($_POST['submiter']))// если отправили форму...то
         }, $words, $counts);
     }
     print_r(countAndSort($text1));
-    fclose($f);// закрываем файл.
+    fclose($f);
     unlink('text1.txt');
 }
