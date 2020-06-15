@@ -10,17 +10,6 @@
 
 <?php
 
-function countAndSort($string)
-{
-    preg_match_all("/[a-zа-я]+/ium", $string, $words);
-    $counts = array_count_values(array_map('ucwords', $words[0]));
-    $words = array_keys($counts);
-    array_multisort($counts, SORT_NUMERIC, SORT_DESC, $words, SORT_STRING);
-    return array_map(function ($a, $b) {
-        return "'$a' встречается $b раз<br>";
-    }, $words, $counts);
-}
-
 function nichego($inputfile)
 {
     $file_name = uniqid() . '.csv';
@@ -34,6 +23,17 @@ function nichego($inputfile)
         fputcsv($fp, array($fields));
     }
     fclose($fp);
+}
+
+function countAndSort($string)
+{
+    preg_match_all("/[a-zа-я]+/ium", $string, $words);
+    $counts = array_count_values(array_map('ucwords', $words[0]));
+    $words = array_keys($counts);
+    array_multisort($counts, SORT_NUMERIC, SORT_DESC, $words, SORT_STRING);
+    return array_map(function ($a, $b) {
+        return "'$a' встречается $b раз<br>";
+    }, $words, $counts);
 }
 
 if (isset($_POST)) {
