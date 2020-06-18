@@ -5,13 +5,13 @@ $text = 'Жил на свете добрый волшебник.
 И вот однажды он подумал, а не сделать ли мне собственную звезду? 
 И сотворил звезду. 
 Назвал ее Солнце. 
-А вокруг неё сделал несколько планет. 
+А вокруг неё сделал несколько планет. 
 А теперь он темными вечерами наблюдает за Солнцем и несколькими планетами. 
 Пьет чай и тихонько улыбается. 
-Потому что необыкновенно красиво.';
-echo $text. PHP_EOL;
+Потому что необыкновенно красиво.';
+echo $text . PHP_EOL;
 $text1 = mb_convert_case($text, MB_CASE_TITLE);
-$count = count(preg_split('/\s+/u', $text, null, PREG_SPLIT_NO_EMPTY)). PHP_EOL;
+$count = count(preg_split('/\s+/u', $text, null, PREG_SPLIT_NO_EMPTY)) . PHP_EOL;
 echo 'Количество слов в тексте: ', $count;
 
 function countAndSort($string)
@@ -22,9 +22,9 @@ function countAndSort($string)
     $words = array_keys($counts);
 
     array_multisort($counts, SORT_NUMERIC, SORT_DESC); //, $words, SORT_STRING
-    return array_map(function($a, $b)
-    {
+    return array_map(function ($a, $b) {
         return "'$a' встречается $b раз";
     }, $words, $counts);
 }
+
 print_r(countAndSort($text1));
