@@ -12,7 +12,7 @@ include("bd.php");
 
 if (isset($_POST['showImages'])) {
     $dir = 'images/';
-    $cols = 3;
+    $cols = 4;
     $files = scandir($dir);
     if (count($files) !== 0) {
         echo "<table>";
@@ -28,10 +28,8 @@ if (isset($_POST['showImages'])) {
                 echo "</td>";
                 if ((($k + 1) % $cols == 0) || (($i + 1) == count($files))) echo "</tr>";
                 $k++;
-            } else {
-                echo "<br>Картинок нет. :(";
             }
-            echo "</table>";
         }
+        echo "</table>";
     }
 }

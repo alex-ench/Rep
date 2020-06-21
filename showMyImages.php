@@ -25,7 +25,7 @@ include("bd.php");
 if (isset($_POST['showMyImages'])) {
     $dir = 'images/';
     $files = scandir($dir);
-    $cols = 9;
+    $cols = 4;
     echo "<table>";
     $k = 0;
     $i = 0;
@@ -52,5 +52,4 @@ if (isset($_POST['showMyImages'])) {
         $i++;
     }
     echo "</table>";
-
 }

@@ -3,7 +3,6 @@ session_start();
 echo '<br> <a href=\'formImages.php\'>Кнопка возврата</a>';
 $login = $_SESSION['login'];
 include("bd.php");
-var_dump($_FILES);
 if (isset($_POST['sender'])) {
     if (!empty($_FILES['image'])) {
         $total = count($_FILES['image']['name']);
