@@ -1,5 +1,4 @@
 <?php
-//Готово, вроде бы...
 if (isset($_POST['login'])) {
     $login = $_POST['login'];
     if ($login == '') {
@@ -22,11 +21,11 @@ $result = $pdo->query("SELECT id FROM users WHERE login='$login'");
 $myrow = $result->fetch(PDO::FETCH_BOTH);
 
 if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. <a href='reg.php'>Введите</a> другой логин.");
+    exit ("Плагиат — это плохо. <a href='reg.php'>Введите</a> другой логин.");
 } else {
     $result2 = $pdo->query("INSERT INTO users (login,password) VALUES('$login','$password')");
     if ($result2 == TRUE)
-        echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница.</a>";
+        echo "Вы теперь успешный человек! У Вас есть возможность войти. <a href='index.php'>Главная страница.</a>";
     else {
         echo 'Ошибка!';
     }

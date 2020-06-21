@@ -30,7 +30,7 @@ if (!empty($myrow['password'])) {
     if ($myrow['password'] == $password) {
         $_SESSION['id'] = $myrow['id'];
         $_SESSION['login'] = $myrow['login'];
-        echo "Добро пожаловать, " . $_SESSION['login'] . "! <br> Давно Вас не было в Уличных Гонках!<br> <a href='formImages.php'>Ваши картинки</a>";
+        echo "<h2>Добро пожаловать, " . $_SESSION['login'] . "!</h2> <h4>Давно Вас не было в Уличных Гонках!</h4> <a href='formImages.php'>Ваши картинки</a>";
     } else {
         exit ("Не обманывайте чётко отлаженную систему, <a href='index.php'>Вернитесь</a> назад");
     }

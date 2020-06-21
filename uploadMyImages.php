@@ -3,8 +3,9 @@ session_start();
 echo '<br> <a href=\'formImages.php\'>Кнопка возврата</a>';
 $login = $_SESSION['login'];
 include("bd.php");
+var_dump($_FILES);
 if (isset($_POST['sender'])) {
-    if (!empty($_FILES['image']['id'])) {
+    if (!empty($_FILES['image'])) {
         $total = count($_FILES['image']['name']);
         for ($i = 0; $i < $total; $i++) {
             if (($_FILES['image']['type'][$i] == 'image/gif' or $_FILES['image']['type'][$i] == 'image/jpeg' or $_FILES['image']['type'][$i] == 'image/png') and ($_FILES['image']['size'][$i] != 0 and $_FILES['image']['size'][$i] <= 512000)) {
